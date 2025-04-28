@@ -37,13 +37,19 @@ main          ─── 受保护的「分支」（仅管理员可合并）
 - 本地仓库：指的是我们git clone到本地电脑所形成的仓库
 - 工作区：我们修改文件和代码是在工作区修改的，修改完后我们会add和commit到本地仓库，最后再push到远程仓库。
 
+<<<<<<< HEAD
 下载安装好git后，运行下面的命令设置用户信息，这样提交或修改项目的时候可以通过历史记录清楚知道是谁提交的。
+=======
+下载安装好git，运行下面的命令设置用户信息，这样提交或修改项目的时候可以清楚知道是谁
+
+>>>>>>> cf0b2f7 (更新 README.md)
 ```sh
 
 git config --global user.name "yourname"
 git config --global user.email xxxx@qq.com
 ```
 
+<<<<<<< HEAD
 在远程仓库中提交自己分享的东西的简易流程：
 （推荐完全按照下面的流程进行）
 
@@ -52,6 +58,9 @@ git config --global user.email xxxx@qq.com
 ```sh
 git clone https://github.com/MLWC123/repo.git
 ```
+=======
+1. 拉取该仓库
+>>>>>>> cf0b2f7 (更新 README.md)
 
 2. 创建个人分支并切换到自己的分支
    由于是团队共同修改一个仓库里的东西，因此每个人在修改仓库的内容时，都应该新创建一个分支，然后在这个分支上修改内容。
@@ -62,8 +71,12 @@ git switch feature-yourname   切换到该新分支
 ```
 
 
+<<<<<<< HEAD
 3. 修改内容
 此时是在`工作区`修改内容的
+=======
+3. 修改本地电脑工作区的文件和代码
+>>>>>>> cf0b2f7 (更新 README.md)
 
 4. 将工作区的这些修改保存到本地仓库
 
@@ -73,7 +86,14 @@ git commit -m "对作出修改的总结"
 ```
 
 5. 将本地仓库的变化告知远程仓库
+<<<<<<< HEAD
 远程仓库出现feature-yourname分支
+=======
+ 
+  ```sh
+   git push origin feature-yourname
+   ```
+>>>>>>> cf0b2f7 (更新 README.md)
 
 ```sh
 git push origin feature-yourname
@@ -122,6 +142,23 @@ git push -f origin feature-yourname
 git branch -d feature-yourname
 git push origin --delete feature-yourname
 ```
+
+11. 删除分支
+   pull request后成功将feature-yourname分支的内容都合并到dev分支后，如果后续的一段时间不再使用，可以使用一下命令删除你建立的分支，可以简化仓库的分支管理。
+
+   ```sh
+   git branch -d feature-yourname
+   ```
+
+9. 将本地仓库的feature-yourname分支上的内容推送到远程仓库的feature-yourname分支上去
+
+   ```sh
+   git push -f origin feature-yourname
+   ```
+
+10. pull request
+
+    在你的个人github账户上，可以选择将个人的feature-youname分支内容pull request到dev分支上
 
 11. 删除分支
    pull request后成功将feature-yourname分支的内容都合并到dev分支后，如果后续的一段时间不再使用，可以使用一下命令删除你建立的分支，可以简化仓库的分支管理。
