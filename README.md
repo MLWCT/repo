@@ -44,14 +44,7 @@ git config --global user.name "yourname"
 git config --global user.email xxxx@qq.com
 ```
 
-在远程仓库中提交自己分享的东西的简易流程：
-（推荐完全按照下面的流程进行）
-
-1. 拉取仓库
-   将远程仓库的东西下载到本地电脑上
-```sh
-git clone https://github.com/MLWC123/repo.git
-```
+1. 拉取该仓库
 
 2. 创建个人分支并切换到自己的分支
    由于是团队共同修改一个仓库里的东西，因此每个人在修改仓库的内容时，都应该新创建一个分支，然后在这个分支上修改内容。
@@ -62,8 +55,7 @@ git switch feature-yourname   切换到该新分支
 ```
 
 
-3. 修改内容
-此时是在`工作区`修改内容的
+3. 修改本地电脑工作区的文件和代码
 
 4. 将工作区的这些修改保存到本地仓库
 
@@ -73,24 +65,24 @@ git commit -m "对作出修改的总结"
 ```
 
 5. 将本地仓库的变化告知远程仓库
-远程仓库出现feature-yourname分支
+ 
+  ```sh
+   git push origin feature-yourname
+   ```
 
-```sh
-git push origin feature-yourname
-```
+   远程仓库出现feature-yourname分支
 
-上述步骤1~5是建立了个人分支feature-yourname，并将本地电脑个人分支的改动同步到远程仓库个人分支
+上述步骤1~5是个人在仓库中修改文件or代码的基本流程。
 
-接下来需要将每个人的个人分支改动的内容都保存到同一个核心的分支，这里本仓库使用的是dev分支
+接下来需要将个人修改的东西合并到远程仓库的dev分支中去。
 
-由于dev分支是多人修改后都会合并的分支，为了避免冲突，需要先在本地仓库更新远程仓库dev分支的最新变动
+由于dev分支是多人修改后都会合并的分支，为了避免冲突，推荐使用rebase来解决合并问题。
 
-5. 更新dev分支改动状态
-拉取dev分支的最新状态，将远程仓库dev分支的状态同步到本地仓库去。
-```sh
-git switch dev
-git pull origin dev
-```
+6. 切换到dev分支，并拉取dev分支的最新状态，将远程仓库dev分支的状态同步到本地仓库去
+   ```sh
+   git switch dev
+   git pull origin dev
+   ```
 
 6. 切换到feature-yourname分支
 
@@ -102,9 +94,9 @@ git switch feature-yourname
 8. 将个人的feature-yourname上的内容rebase到dev分支上
 在个人分支上，将dev分支的改动放上去
 
-```sh
-git rebase dev 
-```
+   ```sh
+   git rebase dev
+   ```
 
 9. 推送
 将本地仓库的feature-yourname分支上的内容推送到远程仓库的feature-yourname分支上去
@@ -123,10 +115,4 @@ git branch -d feature-yourname
 git push origin --delete feature-yourname
 ```
 
-11. 删除分支
-   pull request后成功将feature-yourname分支的内容都合并到dev分支后，如果后续的一段时间不再使用，可以使用一下命令删除你建立的分支，可以简化仓库的分支管理。
-
-   ```sh
-   git branch -d feature-yourname
-   ```
 
