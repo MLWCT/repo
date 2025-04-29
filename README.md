@@ -45,6 +45,9 @@ git config --global user.email xxxx@qq.com
 ```
 
 1. 拉取该仓库
+```sh
+git clone https://github.com/MLWC123/repo.git
+```
 
 2. 创建个人分支并切换到自己的分支
    由于是团队共同修改一个仓库里的东西，因此每个人在修改仓库的内容时，都应该新创建一个分支，然后在这个分支上修改内容。
