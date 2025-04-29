@@ -46,7 +46,7 @@ git config --global user.email xxxx@qq.com
 
 1. 拉取该仓库
 ```sh
-git clone https://github.com/MLWC123/repo.git
+git clone https://github.com/MLWCT/repo.git
 ```
 
 2. 创建个人分支并切换到自己的分支
