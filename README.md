@@ -115,10 +115,4 @@ git branch -d feature-yourname
 git push origin --delete feature-yourname
 ```
 
-11. 删除分支
-   pull request后成功将feature-yourname分支的内容都合并到dev分支后，如果后续的一段时间不再使用，可以使用一下命令删除你建立的分支，可以简化仓库的分支管理。
-
-   ```sh
-   git branch -d feature-yourname
-   ```
 
