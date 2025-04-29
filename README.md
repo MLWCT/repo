@@ -5,7 +5,7 @@
 ## 账号
 
 1. 仓库管理员账号
-2. 需要有一个github的账号，如果想提交文件到github仓库的话，需要联系管理员拉入成为仓库的成员，这样才能修改github仓库的内容
+2. 需要有一个github的账号，如果想提交文件到github仓库的话，需要联系管理员拉入成为仓库团队的成员，这样才能修改github仓库的内容
 
 ## 仓库介绍
 
@@ -26,9 +26,9 @@ individual：个人其它想要共享的东西可以放在这个文件夹中
 ```sh
 main          ─── 受保护的「分支」（仅管理员可合并）
 │
-├── dev       ─── 测试分支（全体可推送，需Pull Request合并），从github上git clone到本地电脑的时候默认拉取的是dev分支的最新变化
+├── dev       ─── 测试分支（极不建议之间在dev分支上改动和推送），从github上git clone到本地电脑的时候默认拉取的是dev分支的最新变化
 │
-└── feature  ─── 个人分支（每人独立分支，命名如 `feature-yourname`）
+└── feature  ─── 个人分支（每人自己创建的独立分支，命名如 `feature-yourname`, 建议在个人独立分支上改动和推送）
 ```
 
 ## 最佳实践
@@ -116,6 +116,7 @@ git push -f origin feature-yourname
 ```sh
 git branch -d feature-yourname
 git push origin --delete feature-yourname
+git fetch -p
 ```
 
 
