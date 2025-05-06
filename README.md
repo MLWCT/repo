@@ -39,7 +39,6 @@ main          ─── 受保护的「分支」（仅管理员可合并）
 
 下载安装好git后，运行下面的命令设置用户信息，这样提交或修改项目的时候可以通过历史记录清楚知道是谁提交的。
 ```sh
-
 git config --global user.name "yourname"
 git config --global user.email xxxx@qq.com
 ```
@@ -53,6 +52,7 @@ git clone https://github.com/MLWCT/repo.git
    由于是团队共同修改一个仓库里的东西，因此每个人在修改仓库的内容时，都应该新创建一个分支，然后在这个分支上修改内容。
 
 ```shell
+cd repo     切换到目录里面
 git branch feature-yourname   创建新分支
 git switch feature-yourname   切换到该新分支
 ```
@@ -68,10 +68,10 @@ git commit -m "对作出修改的总结"
 ```
 
 5. 将本地仓库的变化告知远程仓库
- 
+
   ```sh
    git push origin feature-yourname
-   ```
+  ```
 
    远程仓库出现feature-yourname分支
 
@@ -102,7 +102,7 @@ git switch feature-yourname
    ```
 
 9. 推送
-将本地仓库的feature-yourname分支上的内容推送到远程仓库的feature-yourname分支上去
+将本地仓库的feature-yourname分支上的内容推送到远程仓库的feature-yourname分支上去， 
 
 ```sh
 git push -f origin feature-yourname
@@ -118,5 +118,4 @@ git branch -d feature-yourname
 git push origin --delete feature-yourname
 git fetch -p
 ```
-
 
